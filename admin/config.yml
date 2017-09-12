@@ -3,7 +3,8 @@ backend:
   repo: kram-netlify/netlify-cms-test1 # Path to your Github repository
   branch: master # Branch to update (master by default)
 
-media_folder: "images/uploads" # Folder where user uploaded files should go
+media_folder: "public-site/images/uploads" # Folder where user uploaded files should gogo
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -16,3 +17,4 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
