@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update (master by default)
 
 media_folder: "public-static-site/images/uploads" # Folder where user uploaded files should gogo
-public_folder: "/images/uploads"
+public_folder: "public-static-site/images/uploads"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
