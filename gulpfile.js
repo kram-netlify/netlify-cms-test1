@@ -167,8 +167,8 @@ gulp.task('pug', function () {
 gulp.task('serve', ['sass', 'pug', 'js', 'jslibs'], function() {
 
     browserSync.init({
-        server: ".",
-        startPath: '/' + paths.getDestSubfolder('html')
+        server: 'public-static-site',
+        startPath: '/html'
     });
 
     gulp.watch(watchSCSSPath, ['sass']);
