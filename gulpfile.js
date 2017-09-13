@@ -25,9 +25,10 @@ const NWDEVMODE = true;
 
 // paths
 // -----
+const publicFolder = 'public-static-site';
 const paths = new Paths({
     srcBase: 'src',
-    destBase: 'public-static-site/static'
+    destBase: publicFolder + '/static'
 });
 const compiledSCSSPath = paths.getDestSubfolder('css');
 const compiledJSPath = paths.getDestSubfolder('js');
@@ -36,8 +37,8 @@ const watchJsPath = paths.getWatchJs();
 const watchPugPath =  paths.getWatchHtml();
 const mainSCSSFilePath = paths.getSrcCssMainFile();
 const mainJsFilePath =  paths.getSrcJsMainFile();
-const mainDataFilePath =  paths.getSrcDataMainFile();
 const mainHtmlViewsSrcPath =  paths.getSrcSubfolder('html') + '/views/**/*.pug';
+const compiledPugPath = publicFolder;
 
 // DATA
 // ----
@@ -45,7 +46,6 @@ const mainHtmlViewsSrcPath =  paths.getSrcSubfolder('html') + '/views/**/*.pug';
 // CMS DATA
 const CmsDataContainer = require('./lib/cms-data-container').CmsDataContainer;
 const cmsData = new CmsDataContainer();
-console.log(cmsData);
 
 // VIEW DATA
 const viewData = {
@@ -151,10 +151,6 @@ gulp.task('jslibs', function () {
 });
 
 gulp.task('pug', function () {
-    // external file data
-	// let templateData = fs.readFileSync(mainDataFilePath);
-	// viewData.data = JSON.parse(templateData);
-	// return
     return gulp.src(mainHtmlViewsSrcPath)
         .pipe(pug({
             data: viewData
@@ -167,7 +163,7 @@ gulp.task('serve', ['sass', 'pug', 'js', 'jslibs'], function() {
 
     browserSync.init({
         server: 'public-static-site',
-        startPath: '/html'
+        startPath: ''
     });
 
     gulp.watch(watchSCSSPath, ['sass']);
