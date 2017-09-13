@@ -29,7 +29,6 @@ const paths = new Paths({
     srcBase: 'src',
     destBase: 'public-static-site/static'
 });
-const compiledPugPath = paths.getDestSubfolder('html');
 const compiledSCSSPath = paths.getDestSubfolder('css');
 const compiledJSPath = paths.getDestSubfolder('js');
 const watchSCSSPath = paths.getWatchCss();
