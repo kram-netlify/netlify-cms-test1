@@ -158,6 +158,10 @@ gulp.task('pages', function () {
     renderPages(viewData);
 });
 
+gulp.task('build-var', ['pages'], function() {
+
+});
+
 gulp.task('serve', ['sass', 'pages', 'js', 'jslibs'], function() {
 
     browserSync.init({
