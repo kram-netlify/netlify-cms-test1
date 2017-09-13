@@ -18,6 +18,7 @@ const path = require('path');
 
 // NW Modules
 const Paths = require('./lib/paths.js').Paths;
+const renderPages = require('./lib/pages.js').renderPages;
 
 // nw build config
 // ---------------
@@ -150,16 +151,30 @@ gulp.task('jslibs', function () {
         .pipe(gulp.dest(paths.getDestSubfolder('js')));
 });
 
-gulp.task('pug', function () {
-    return gulp.src(mainHtmlViewsSrcPath)
-        .pipe(pug({
-            data: viewData
-        }))
-        .pipe(gulp.dest(compiledPugPath))
-        .pipe(browserSync.stream());
+//gulp.task('pug', function () {
+//    return gulp.src(mainHtmlViewsSrcPath)
+//        .pipe(pug({
+//            data: viewData
+//        }))
+//        .pipe(gulp.dest(compiledPugPath))
+//        .pipe(browserSync.stream());
+//});
+
+gulp.task('pages', function () {
+    renderPages();
+    //return gulp.src(mainHtmlViewsSrcPath)
+    //    .pipe(pug({
+    //        data: viewData
+    //    }))
+    //    .pipe(rename(function (path) {
+    //        path.dirname += "/"+path.basename;
+    //        path.basename = "index";
+    //    }))
+    //    .pipe(gulp.dest(compiledPugPath))
+    //    .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['sass', 'pug', 'js', 'jslibs'], function() {
+gulp.task('serve', ['sass', 'pages', 'js', 'jslibs'], function() {
 
     browserSync.init({
         server: 'public-static-site',
@@ -167,7 +182,7 @@ gulp.task('serve', ['sass', 'pug', 'js', 'jslibs'], function() {
     });
 
     gulp.watch(watchSCSSPath, ['sass']);
-    gulp.watch(watchPugPath, ['pug']);
+    gulp.watch(watchPugPath, ['pages']);
     gulp.watch(watchJsPath, ['js']);
 });
 
