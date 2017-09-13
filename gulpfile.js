@@ -153,8 +153,8 @@ gulp.task('jslibs', function () {
 
 gulp.task('pug', function () {
     // external file data
-	let templateData = fs.readFileSync(mainDataFilePath);
-	viewData.data = JSON.parse(templateData);
+	// let templateData = fs.readFileSync(mainDataFilePath);
+	// viewData.data = JSON.parse(templateData);
 	// return
     return gulp.src(mainHtmlViewsSrcPath)
         .pipe(pug({
