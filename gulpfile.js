@@ -27,7 +27,7 @@ const NWDEVMODE = true;
 // -----
 const paths = new Paths({
     srcBase: 'src',
-    destBase: 'dist'
+    destBase: 'public-static-site/static'
 });
 const compiledPugPath = paths.getDestSubfolder('html');
 const compiledSCSSPath = paths.getDestSubfolder('css');

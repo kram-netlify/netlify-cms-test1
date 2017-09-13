@@ -1,0 +1,15 @@
+/* LIBS */
+@import url(../../node_modules/slick-carousel/slick/slick.css);
+/* COMPONENTS */
+body {
+  border: solid 1px blue;
+}
+
+/* MAIN CSS */
+h1 {
+  color: red;
+}
+
+body {
+  background-color: #ddd;
+}
