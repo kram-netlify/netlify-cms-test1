@@ -1,6 +1,8 @@
 ---
 layout: page
 template: standard
-title: About
+title: Home
 ---
-me body
+# Home title
+
+me body text
