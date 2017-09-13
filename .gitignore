@@ -1,0 +1,10 @@
+node_modules
+ 
+
+# editors
+.idea/
+.idea_modules/
+
+# general
+.DS_Store
+Thumbs.db
