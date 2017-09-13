@@ -154,27 +154,8 @@ gulp.task('jslibs', function () {
         .pipe(gulp.dest(paths.getDestSubfolder('js')));
 });
 
-//gulp.task('pug', function () {
-//    return gulp.src(mainHtmlViewsSrcPath)
-//        .pipe(pug({
-//            data: viewData
-//        }))
-//        .pipe(gulp.dest(compiledPugPath))
-//        .pipe(browserSync.stream());
-//});
-
 gulp.task('pages', function () {
     renderPages(viewData);
-    //return gulp.src(mainHtmlViewsSrcPath)
-    //    .pipe(pug({
-    //        data: viewData
-    //    }))
-    //    .pipe(rename(function (path) {
-    //        path.dirname += "/"+path.basename;
-    //        path.basename = "index";
-    //    }))
-    //    .pipe(gulp.dest(compiledPugPath))
-    //    .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['sass', 'pages', 'js', 'jslibs'], function() {
