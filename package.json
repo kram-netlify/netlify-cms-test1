@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "~3.0.3"
+  }
 }
