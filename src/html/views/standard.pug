@@ -2,9 +2,8 @@ extends ../body-layout
 block template
 	//- ---------------------
 	//- ---------------------
-	h1 hello me view yy xyz
-	h2= 'ahayoo ' + data.pageTitle
-	p3= currentFileName
+	h1= 'pagetitle is: "' + page.title + '"'
+	h2= 'template is: "' + page.template + '"'
 	p= 'devmode is: ' + devMode
 	p= data.posts.blog[0].data.title
 	.myslider

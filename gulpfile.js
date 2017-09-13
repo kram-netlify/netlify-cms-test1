@@ -51,7 +51,10 @@ const cmsData = new CmsDataContainer();
 // VIEW DATA
 const viewData = {
     devMode: NWDEVMODE,
-    currentFileName: null,
+    page: {
+        title: null,
+        template: null
+    },
     data: {
         posts: cmsData.posts
     },
@@ -161,7 +164,7 @@ gulp.task('jslibs', function () {
 //});
 
 gulp.task('pages', function () {
-    renderPages();
+    renderPages(viewData);
     //return gulp.src(mainHtmlViewsSrcPath)
     //    .pipe(pug({
     //        data: viewData
