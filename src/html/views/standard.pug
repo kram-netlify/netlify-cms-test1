@@ -2,10 +2,10 @@ extends ../body-layout
 block template
 	//- ---------------------
 	//- ---------------------
-	h1= 'pagetitle is: "' + page.title + '"'
-	h2= 'template is: "' + page.template + '"'
-	p= 'devmode is: ' + devMode
-	p= data.posts.blog[0].data.title
+	h4= 'pagetitle is: "' + page.title + '"'
+	h4= 'template is: "' + page.template + '"'
+	h4= 'devmode is: ' + devMode
+	div.wysiwyg-field!= page.mainText
 	.myslider
 		div
 			h3 1
