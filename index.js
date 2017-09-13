@@ -1,8 +1,4 @@
-const matter = require('gray-matter');
-var fs = require('fs')
-var file = fs.readFileSync('_posts/blog/2017-09-12-hello.md', 'utf8');
+const CmsDataContainer = require('./lib/cms-data-container').CmsDataContainer;
 
-let data = matter(file);
-console.log(data);
-
-fs.writeFileSync('./output.html', data);
+const cmsData = new CmsDataContainer();
+console.log(cmsData);
