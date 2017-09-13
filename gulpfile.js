@@ -40,19 +40,22 @@ const mainJsFilePath =  paths.getSrcJsMainFile();
 const mainDataFilePath =  paths.getSrcDataMainFile();
 const mainHtmlViewsSrcPath =  paths.getSrcSubfolder('html') + '/views/**/*.pug';
 
-// data
+// DATA
 // ----
-const viewData = {
-    devMode: NWDEVMODE,
-    currentFileName: null,
-    data: {},
-};
 
 // CMS DATA
-// --------
 const CmsDataContainer = require('./lib/cms-data-container').CmsDataContainer;
 const cmsData = new CmsDataContainer();
 console.log(cmsData);
+
+// VIEW DATA
+const viewData = {
+    devMode: NWDEVMODE,
+    currentFileName: null,
+    data: {
+        posts: cmsData.posts
+    },
+};
 
 // tool options
 // ------------
